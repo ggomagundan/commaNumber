@@ -9,7 +9,7 @@ function commaNum(num){
 function removeCommaNum(num){
 
   if (num !== undefined ){
-    return num.toString().replace(/,/g, "");
+    return num.toString().replace(/,/g, "").replace(/[^0-9]/g, '');
   }
   return ;
 }
