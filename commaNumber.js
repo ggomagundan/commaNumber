@@ -1,7 +1,11 @@
 function commaNum(num){
 
   if (num !== undefined ){
-    return num.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    if (num.toString()[0] == "-"){
+      return "-" + num.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }else{
+      return num.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
   }
   return ;
 }
@@ -9,7 +13,11 @@ function commaNum(num){
 function removeCommaNum(num){
 
   if (num !== undefined ){
-    return num.toString().replace(/,/g, "").replace(/[^0-9]/g, "");
+    if ( num.toString()[0] == "-"){
+      return "-" +  num.toString().replace(/,/g, "").replace(/[^0-9]/g, "");
+    }else{
+      return num.toString().replace(/,/g, "").replace(/[^0-9]/g, "");
+    }
   }
   return ;
 }
